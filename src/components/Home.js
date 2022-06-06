@@ -4,11 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import Loader from './Loader';
 
 import SessionContext from '../contexts/sessionContext';
+
 function Home() {
-  const { session } = useContext(SessionContext);
-  const { setSession } = useContext(SessionContext);
+  const { session, setSession } = useContext(SessionContext);
   const { navigate } = useNavigate();
-  let [shows, setShows] = useState([]);
+  const [shows, setShows] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [favouriteShows, setFavouriteShows] = useState([]);
@@ -35,7 +35,6 @@ function Home() {
     setLoading(true);
     axios.get(`https://api.tvmaze.com/shows`).then((res) => {
       const showsData = res.data;
-
       setShows(showsData);
       setLoading(false);
     });

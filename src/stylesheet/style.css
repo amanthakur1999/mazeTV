@@ -411,3 +411,7 @@ a {
   background: rgb(167, 232, 92);
   transition-delay: 0.35s;
 }
+
+.fa-heart {
+  cursor: pointer;
+}
