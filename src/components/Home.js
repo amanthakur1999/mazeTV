@@ -28,6 +28,7 @@ function Home() {
   useEffect(() => {
     getShows();
     getFavouriteShows();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getShows = () => {
