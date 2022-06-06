@@ -1,0 +1,409 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* custum css */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.2;
+}
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.flex-18 {
+  flex: 0 1 18%;
+}
+.flex-20 {
+  flex: 0 1 15%;
+}
+.flex-33 {
+  flex: 0 1 33%;
+}
+.flex-45 {
+  flex: 0 1 45%;
+}
+.flex-50 {
+  flex: 0 1 50%;
+}
+.flex-65 {
+  flex: 0 1 75%;
+}
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+h1 {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 200;
+  /* padding: 1rem; */
+  margin-top: 2rem;
+}
+
+.flex-sb {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-se {
+  display: flex;
+  justify-content: space-evenly;
+}
+.align-center {
+  align-items: center;
+}
+
+.header {
+  padding: 2rem 0rem;
+  background-color: #3c8f86;
+}
+.header h2 {
+  font-size: 2rem;
+}
+.showcard {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.rating-div {
+  border-top: 1px solid #b9e3de;
+  padding: 0.6rem;
+}
+.fa-star {
+  padding-right: 1rem;
+}
+.show-detail {
+  border-spacing: 0;
+  color: #b9e3de;
+  background-color: rgb(63, 148, 139);
+}
+.show-detail h2 {
+  padding: 1rem;
+}
+a {
+  text-decoration: none;
+  color: #b9e3de;
+}
+.showinfo {
+  padding: 0rem 5rem;
+  line-height: 2;
+}
+.showinfo h3 {
+  font-size: 2.6rem;
+  padding-left: 0.5rem;
+  font-weight: 200;
+}
+.info {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #f7f7f7;
+  line-height: 1.8;
+}
+.info b {
+  padding-right: 0.5rem;
+}
+.info h2 {
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+/* search */
+
+.searchBox {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #2f3640;
+  border-radius: 40px;
+  padding: 5px 8px;
+}
+
+.searchBox:hover > .searchInput {
+  width: 340px;
+  padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color: #2f3640;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #3c8f86;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+.searchInput::placeholder {
+  color: rgb(212, 211, 211);
+}
+.form-control {
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 0.2rem;
+  margin-top: 6rem;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+.form-control input {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  height: 3rem;
+  padding-left: 0.3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 0.2rem;
+  border: none;
+  border: 1px solid rgb(39, 39, 39);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+.form-control textarea {
+  width: 100%;
+  padding-left: 0.3rem;
+  border-radius: 0.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: rgba(27, 27, 27, 0.18) 0px 2px 4px;
+}
+.form-control h3 {
+  font-size: 1.4rem;
+}
+
+.login-btn {
+  margin-top: 1rem;
+  text-align: end;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(97, 115, 148);
+  color: white;
+  font-family: 'Farfetch Basis', 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
+}
+.signin h2 {
+  font-size: 1.2rem;
+  padding: 1rem 0;
+}
+.signin p {
+  color: rgb(153, 84, 84);
+}
+.active {
+  color: rgb(241, 59, 59);
+}
+.fav-btn {
+  padding: 0.2rem 0.2rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.green {
+  background-color: #5fcf74;
+  color: #2f3640;
+}
+.logout {
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-left: 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  /* border: 2px solid rgb(245, 45, 45);
+  
+  background-color: #3c8f86;
+  color: rgb(224, 28, 28); */
+}
+
+.btn {
+  position: relative;
+  padding: 0.6rem 0.7rem;
+  padding-right: 0.4rem;
+  font-size: 0.7rem;
+  color: black;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
+  margin-left: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn:before,
+.btn:after {
+  content: '';
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: red;
+  /* transition-delay: 0.5s; */
+}
+
+.btn:hover:before {
+  transition-delay: 0s;
+}
+
+.btn:hover:after {
+  background: rgb(167, 232, 92);
+  transition-delay: 0.35s;
+}
