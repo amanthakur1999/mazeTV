@@ -40,9 +40,10 @@ function FavShows() {
 
   return (
     <>
+      <div className="fav-section">
+        <h2>Favourite Shows</h2>
+      </div>
       <section className="container">
-        <h1>Favourite Shows</h1>
-
         <ul className="flex wrap">
           {shows.map((eachShow) => {
             return (

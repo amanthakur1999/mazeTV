@@ -3,15 +3,17 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp() {
   const navigate = useNavigate();
-
+  const [errorMessage, setErrorMessage] = useState('');
   const [userDetails, setUserDetails] = useState({
     username: '',
     email: '',
     password: '',
-    error: '',
   });
 
   const handleChange = (event) => {
+    if (errorMessage) {
+      setErrorMessage('');
+    }
     let { name, value } = event.target;
     setUserDetails({
       ...userDetails,
@@ -19,8 +21,9 @@ function SignUp() {
     });
   };
 
-  const handleSubmit = async () => {
-    const usersString = await localStorage.getItem('users');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const usersString = await localStorage.getItem('user');
     const users = usersString ? JSON.parse(usersString) : [];
 
     const alreadyExist = users.find((user) => {
@@ -28,7 +31,7 @@ function SignUp() {
     });
 
     if (alreadyExist) {
-      // User already exits;
+      setErrorMessage('This user already Exist');
       return;
     }
 
@@ -48,6 +51,7 @@ function SignUp() {
           <Link to="/login">
             <button className="login-btn">Log In</button>
           </Link>
+          {errorMessage ? <p>{errorMessage}</p> : null}
           <input
             onChange={handleChange}
             type="text"

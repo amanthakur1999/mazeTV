@@ -4,7 +4,7 @@ import axios from 'axios';
 import Loader from './Loader';
 function ShowDetail() {
   let param = useParams();
-  const [showDatail, setshowDatail] = useState([]);
+  const [showDetail, setShowDetail] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getShows = () => {
@@ -12,7 +12,7 @@ function ShowDetail() {
     axios.get(`https://api.tvmaze.com/shows/${param.id}`).then((res) => {
       const showsData = res.data;
       console.log(showsData);
-      setshowDatail(showsData);
+      setShowDetail(showsData);
       setLoading(false);
     });
   };
@@ -27,61 +27,70 @@ function ShowDetail() {
 
   return (
     <>
+      <div className="fav-section">
+        <h2> Show Detail</h2>
+      </div>
       <section className="container">
         <ul className="showinfo">
           <li>
-            <h3>{showDatail.name}</h3>
+            <h3>{showDetail.name}</h3>
           </li>
           <div className="flex-sb">
             <li className="flex-20">
               <img
-                src={showDatail?.image?.medium || ''}
-                alt={showDatail.name}
+                src={
+                  showDetail?.image?.medium ||
+                  'https://static.tvmaze.com/uploads/images/medium_portrait/19/49606.jpg'
+                }
+                alt={showDetail.name}
               />
             </li>
-            <li className="flex-45">{showDatail.summary}</li>
+            <li
+              className="flex-45"
+              dangerouslySetInnerHTML={{ __html: showDetail.summary }}
+            ></li>
 
             <div className="flex-33 info">
               <h2>Show Info</h2>
               <li>
                 <b>Language:</b>
-                {showDatail?.language}
+                {showDetail?.language}
               </li>
               <li>
                 <b>genres:</b>
-                {showDatail?.genres}
+                {showDetail?.genres}
               </li>
               <li>
                 <b>Show type:</b>
-                {showDatail?.type}
+                {showDetail?.type}
               </li>
               <li>
                 <b>Episodes ordered:</b>
-                {showDatail?.type}
+                {showDetail?.type}
               </li>
               <li>
                 <b>status:</b>
-                {showDatail?.status}
+                {showDetail?.status}
               </li>
               <li>
                 <b>runtime:</b>
-                {showDatail?.runtime}
+                {showDetail?.runtime}
               </li>
               <li>
                 <b>schedule:</b>
-                {showDatail?.schedule?.days}
+                {showDetail?.schedule?.days}
               </li>
               <li>
                 <b>premiered:</b>
-                {showDatail?.premiered}
+                {showDetail?.premiered}
               </li>
               <li>
                 <b>network:</b>
-                {showDatail?.network?.country?.name}
+                {showDetail?.network?.country?.name}
               </li>
               <li>
                 <b>rating:</b>
-                {showDatail?.rating?.average}
+                {showDetail?.rating?.average}
               </li>
             </div>
           </div>

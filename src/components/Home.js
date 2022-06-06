@@ -46,7 +46,6 @@ function Home() {
     axios.get(`https://api.tvmaze.com/search/shows?q=${q}`).then((res) => {
       const showsData = res.data.map((show) => show.show);
 
-      console.log(showsData);
       setShows(showsData);
       setLoading(false);
     });
@@ -54,7 +53,11 @@ function Home() {
 
   const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
-      searchShows(search);
+      if (search) {
+        searchShows(search);
+      } else {
+        getShows();
+      }
     }
   };
 
